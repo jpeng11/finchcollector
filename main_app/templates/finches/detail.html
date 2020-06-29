@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Finch Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ finch.name }}</span>
+    <p>Scientific Name: {{ finch.scientific_name }}</p>
+    <p>Mass: {{ finch.mass }} cm</p>
+    <p>Length: {{ finch.length }} g</p>
+  </div>
+  <div class="card-action">
+    <a href="{% url 'update' finch.id %}">Edit</a>
+    <a href="{% url 'finch_delete' finch.id %}">Delete</a>
+  </div>
+</div>
+
+{% endblock %}
